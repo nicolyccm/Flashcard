@@ -25,6 +25,9 @@ body {
     text-align: center;
     /* background-color: aquamarine; */
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
+    backface-visibility: hidden;
 }
 
 .cartao__conteudo h3 {
@@ -41,6 +44,7 @@ body {
 .cartao__conteudo p {
     margin-top: 1rem;
     padding: 2rem;
+    margin-top: 5rem;
 }
 
 .cartao__conteudo__pergunta p {
@@ -52,10 +56,37 @@ body {
     color: var(--card-back-color);
     font-weight: 700;
 }
+  
+.cartao:hover .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+Monte Everest
 
 footer {
     background-color: black;
-    color: white;
+    color: rgb(243, 243, 248);
     position: fixed;
     bottom: 0;
     width: 100%;
